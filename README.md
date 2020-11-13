@@ -4,15 +4,15 @@
 
 ### What is the data? What does the data represent? How is it represented?
 
-The data at hands shows the location, size, wealth, gender, age, and education of 48,218 individuals. For ease of later analysis, the data was transformed from a csv to a Panda's data frame. Upon first analysis of the data, it was determined that the initial index was unneeded and switched with a column titled "unnamed: 0." This was becaus the "unnamed: 0" column represented the index, or the number, of each respondent, so it was used to be the index of the data frame as well.
+The data at hands shows the location, size, wealth, gender, age, and education of 48,218 individuals in Liberia. For ease of later analysis, the data was transformed from a csv to a Panda's data frame. Upon first analysis of the data, it was determined that the initial index was unneeded and switched with a column titled "unnamed: 0." This was because the "unnamed: 0" column represents the index, or the number, of each respondent, so it was used to be the index of the data frame as well.
 
 Similarly, the data was seperated into an X data frame and a y data frame. The y data frame represents the target of prediction for this ananlysis and contains the education levels of the different respondents. The rest of the variables were stored into the X data frame to help predict people's eduction. 
 
-The data was also split into Xtrain, Xtest, ytrain, and ytest data frames using the training testing split function. 60% of the observation was used for training, and 40% was used for testing. A random state of 146 was used for consistency.
+The data was also split into Xtrain, Xtest, ytrain, and ytest data frames using the training testing split function. 60% of the observations were used for training, and 40% were used for testing. A random state of 146 was used for consistency.
 
 ### Is there any information we know about the data before we begin the predictions?
 
-At first, I analzed the correlation between the X variables by displaying a correlation matrix through a heat map representation. Similarly, I looked for irregularites within the X data frame through a pair plot representation. Both of them are shown below.
+At first, I analyzed the correlation between the X variables by displaying a correlation matrix through a heat map representation. Similarly, I looked for irregularites within the X data frame through a pair plot representation. Both of them are shown below.
 
 
 ![](corr_heat.png)
@@ -38,15 +38,15 @@ The KFold validation actually resulted in a mean training accuracy of .5723 and 
 
 ### K-Nearest Neighbors (KNN) and Model Validation
 
-For the KNN Models, a model was created for each data representation. Then for each data representation, a KNN was instantiated for values from 1-20 of neighbors. The testing and training score of each instantiated was noted inorder to find the best number of neighbors for comparison with other data representations. An image of the plot for the KNN based on the min max scaler is shown below. 
+For the KNN Models, a model was created for each data representation. Then for each data representation, a KNN was instantiated for values from 1-20 of neighbors. The testing and training score of each instance was noted inorder to find the best number of neighbors for comparison with other data representations. An image of the plot for the KNN based on the min max scaler is shown below. 
 
 ![](KNN_N_Neighbors.png)
 
-The best number of numbers was chosen by deciding at which part of the plot did the testing score begin to level off or right before both data trended to the same score. This is because with a greater number of neigbors, at one point, the entire plot will be filled by an unmeaningful cluster. Likewise, the nearest neighbors number was chosen by determining which instance did not have too much overfitting or underfitting of the data.
+The best number of number of neighbors was chosen by deciding at which part of the plot did the testing score begin to level off or right before both data trended to the same score. This is because with a greater number of neigbors, at one point, the entire plot will be filled by an unmeaningful cluster. Likewise, the nearest neighbors number was chosen by determining which instance did not have too much overfitting or underfitting of the data.
 
-For all data representations, the number of nearest neighbors chosen for model comparison was 6 neighbors. From comparing the different accuracies, it was determined that the min max scaler standardization of the data with a KNN model instatiated at a nearest neighbors equal to 6 out performed all other models with a testing accuracy of .6961, already more than .1 higher than the logistic regression. 
+For all data representations, the number of nearest neighbors chosen for model comparison was 6 neighbors. From comparing the different accuracies, it was determined that the min max scaler standardization of the data with a KNN model instatiated at a nearest neighbors equal to 6 out performed all other models with a testing accuracy of .6961, already .1 higher than the logistic regression. 
 
-In order to ensure that this result was not unusual, a KFold validation of this instance of a KNN model was created. The mean training score was .7697 and the mean testing score was.6959. This was an expected result because the KNN model instance before hand had a similar training and testing score. It is important to note that this model is more overfit than the logisitic regression but has better testing accuracy either way. 
+In order to ensure that this result was not unusual, a KFold validation of this instance of a KNN model was created. The mean training score was .7697 and the mean testing score was .6959. This was an expected result because the KNN model instance before hand had a similar training and testing score. It is important to note that this model is more overfit than the logisitic regression but has better testing accuracy either way. 
 
 Lastly, the difference between inverse distance weighting and regular distance weighting was compared and inverse distance weighting performed worse, so that was not used in the final result.
 
@@ -64,3 +64,5 @@ In order to visualize a decision tree, an image of a tree with a max depth of 2 
 
 ## Final Thoughts
 When comparing how overfit each best model was and comparing the testing accuracy of the models, it is clear that the decision tree out performs the linear regression and KNN models in both regards. The use of KFold validation leads me to be confident in my assertion.
+
+For full transparency of my assertions, I have attached images of my code below.
