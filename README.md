@@ -52,9 +52,9 @@ Lastly, the difference between inverse distance weighting and regular distance w
 
 ### Decision Tree and Model Validation
 
-Unlike the other two models, the inherent nature of the decision tree does not necessitate that we use a the need of standardization because it's classification is not based on the distance between the two points. However, the parameters min samples split and max depth were changed and compared to determine the highest accuracy of a decision tree. 
+Unlike the other two models, the inherent nature of the decision tree does not necessitate the standardization of data because it's classification is not based on the distance between the two points. However, the parameters min samples split and max depth were changed and compared to determine the highest accuracy of a decision tree. 
 
-It was determined that a decision tree of max depth 9 and min samples split of 18 had the highest accuracy of .7158. Instance were compared for ever depth between 2 and 20 and every min samples split between 2 and 20. I am confident of having found the highest performing accuracy because the trend of accuracies continued upward before this instance and then trended downwards afterwards. 
+It was determined that a decision tree of max depth 9 and min samples split of 18 had the highest accuracy of .7158. Instance were compared for every depth between 2 and 20 and every min samples split between 2 and 20. I am confident of having found the highest performing accuracy because the trend of accuracies continued upward before this instance and then trended downwards afterwards. 
 
 A KFold Validation for this instance of the model was created and the mean training accuracy was .7326 with a testing accuracy of .7204. This is significantly less over fit the the KNN model and has a higher accuracy than both the other models. 
 
@@ -66,4 +66,4 @@ In order to visualize a decision tree, an image of a tree with a max depth of 2 
 When comparing how overfit each best model was and comparing the testing accuracy of the models, it is clear that the decision tree out performs the linear regression and KNN models in both regards. The use of KFold validation leads me to be confident in my assertion.
 
 For full transparency of my assertions, I have attached images of my code below.
-[Code](https://sasan-faraj.github.io/Extra_Credit/extra_credit)
+[My Code](https://sasan-faraj.github.io/Extra_Credit/extra_credit)
