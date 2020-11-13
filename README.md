@@ -64,5 +64,3 @@ In order to visualize a decision tree, an image of a tree with a max depth of 2 
 
 ## Final Thoughts
 When comparing how overfit each best model was and comparing the testing accuracy of the models, it is clear that the decision tree out performs the linear regression and KNN models in both regards. The use of KFold validation leads me to be confident in my assertion.
-
-a
